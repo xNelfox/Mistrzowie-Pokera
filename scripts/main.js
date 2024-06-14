@@ -27,7 +27,7 @@ const cardTwo = document.querySelector('.card-two');
 
 let names = ["Jan", "Piotr", "Krzysztof", "Andrzej", "Marek", "Tomasz", "Paweł", "Michał", "Adam", "Stanisław", "Anna", "Maria", "Katarzyna", "Małgorzata", "Agnieszka", "Ewa", "Elżbieta", "Zofia", "Barbara", "Jadwiga"];
 
-let round = 5;
+let round = 1;
 let pot = 0;
 let bid = 0;
 let currentBiggestBid = 20;
@@ -264,11 +264,7 @@ function roundSystem() {
             playSound('../audio/win.mp3');
             messageSystem(`${determineWinner()} ${pot} PLN`, 10000);
             valueUpdate();
-console.log(player1deck)
-console.log(player2deck)
-console.log(player3deck)
-console.log(player4deck)
-console.log(cardsDrawn)
+
             setTimeout(() => {
                 round = 1;
                 pot = 0;
