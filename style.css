@@ -1,0 +1,459 @@
+@import url('https://fonts.googleapis.com/css2?family=Arimo:ital,wght@0,400..700;1,400..700&family=Noto+Sans+Syriac+Eastern:wght@100..900&display=swap');
+
+
+/* document */
+* {
+    box-sizing: border-box;
+    user-select: none;
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    font-family: 'Arimo', Arial, Helvetica, sans-serif;
+    width: 100%;
+    height: 100vh;
+}
+
+
+/* wrapper */
+.wrapper {
+    background: url('img/background.jpg') fixed bottom / cover;
+    width: 100%;
+    height: 100%;
+}
+
+.wrapper .top, .wrapper .bottom {
+    display: flex;
+    width: 100%;
+    height: 17.5%;
+}
+
+.wrapper .bottom .left, .wrapper .bottom .right {
+    align-items: flex-end;
+}
+
+.wrapper .left, .wrapper .right {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 17.5%;
+    height: 100%;
+}
+
+.wrapper .top .center {
+    align-items: flex-start;
+}
+
+.wrapper .middle {
+    display: flex;
+    width: 100%;
+    height: 65%;
+}
+
+.wrapper .middle .center .top {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 5%;
+}
+
+.wrapper .middle .center .bottom {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 90%;
+}
+
+.wrapper .center {
+    width: 65%;
+    height: 100%;
+}
+
+.game {
+    display: none;
+}
+
+.game.show-shadow {
+    animation: boxShadowIn 1s ease-in-out;
+}
+
+.game.hide-shadow {
+    animation: boxShadowOut 1s ease-in-out;
+}
+
+.menu {
+    width: 100%;
+    height: 100%;
+}
+
+.menu .top {
+    padding-top: 35vh;
+}
+
+.menu .top {
+    height: 45%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.menu .top p {
+    color: #080d09;
+    font-size: 5vh;
+    font-weight: bold;
+    margin: 0;
+}
+
+.menu .bottom {
+    height: 10%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.menu .btn {
+    background-color: #3a3e3b;
+    box-shadow: 0 0 1.5vh 0 rgba(0, 0, 0, 0.5);
+    border-radius: .5vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 30vh;
+    height: 5vh;
+    transition: all .25s ease-in-out;
+}
+
+.menu .btn:hover {
+    box-shadow: 0 0 1.5vh 0 rgba(0, 0, 0, 0.65);
+    transform: translateY(-.25vh);
+}
+
+.menu .btn p {
+    color: #080d09;
+    text-align: center;
+    font-size: 2.5vh;
+    font-weight: 500;
+    margin: 0;
+}
+
+
+/* player-cash */
+.player-cash {
+    background-color: #2a2727;
+    box-shadow: 0 0 1.5vh 0 rgba(0, 0, 0, 0.5);
+    border-radius: 0 0 2vh 2vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 50%;
+}
+
+.player-cash .btn {
+    background-color: #3a3e3b;
+    box-shadow: 0 0 1.5vh 0 rgba(0, 0, 0, 0.5);
+    border-radius: .5vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 65%;
+    margin: 0 2vh;
+    transition: all .25s ease-in-out;
+}
+
+.player-cash p {
+    color: #080d09;
+    text-align: center;
+    font-size: 2.5vh;
+    font-weight: 500;
+    margin: 0;
+}
+
+
+/* player-movement-message */
+.player-movement-message {
+    background-color: rgb(0, 0, 0, 0.25);
+    box-shadow: 0 0 1.5vh 0 rgba(0, 0, 0, 0.5);
+    border-radius: .5vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: auto;
+    height: auto;
+    padding: 1vh 5vh;
+    opacity: 0;
+}
+
+.player-movement-message p {
+    color: #ffffff;
+    text-align: center;
+    font-size: 2.5vh;
+    font-weight: 500;
+    margin: 0;
+}
+
+
+/* drawn-cards */
+.drawn-cards {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    width: 100%;
+    height: 85%;
+}
+
+.drawn-cards img {
+    box-shadow: 0 0 1.5vh 0 rgba(0, 0, 0, 0.5);
+    border-radius: .5vh;
+    width: auto;
+    height: 50%;
+    margin: 0 2vh;
+    transition: all .25s ease-in-out;
+    animation: cardsAnimation 1.5s ease-in-out;
+}
+
+.drawn-cards img:hover {
+    box-shadow: 0 0 1.5vh 0 rgba(0, 0, 0, 0.65);
+    transform: translateY(-.25vh);
+}
+
+
+/* game-properties */
+.game-properties {
+    background-color: #2a2727;
+    box-shadow: 0 0 1.5vh 0 rgba(0, 0, 0, 0.5);
+    border-radius: 2vh 2vh 0 0;
+    width: 75%;
+    height: 15vh;
+}
+
+.game-properties .top, .game-properties .bottom {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 50%;
+    padding: 1.5vh;
+}
+
+.game-properties .btn {
+    background-color: #3a3e3b;
+    box-shadow: 0 0 1.5vh 0 rgba(0, 0, 0, 0.5);
+    border-radius: .5vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+}
+
+.game-properties p {
+    color: #080d09;
+    text-align: center;
+    font-size: 2vh;
+    font-weight: 500;
+    margin: 0;
+}
+
+
+/* player-controls */
+.player-controls {
+    background-color: #2a2727;
+    box-shadow: 0 0 1.5vh 0 rgba(0, 0, 0, 0.5);
+    border-radius: 2vh 2vh 0 0;
+    width: 100%;
+    height: 17.5vh;
+}
+
+.player-controls .top {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 40%;
+}
+
+.player-controls .top .left, .player-controls .top .right {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50%;
+    height: 100%;
+}
+
+.player-controls .top .left .btn {
+    background-color: #3a3e3b;
+    box-shadow: 0 0 1.5vh 0 rgba(0, 0, 0, 0.5);
+    border-radius: .5vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 65%;
+    margin: 0 2vh;
+    transition: all .25s ease-in-out;
+}
+
+.player-controls .top .left .btn:hover {
+    box-shadow: 0 0 1.5vh 0 rgba(0, 0, 0, 0.65);
+    transform: translateY(-.25vh);
+}
+
+.player-controls .top .right .btn {
+    background-color: #3a3e3b;
+    box-shadow: 0 0 1.5vh 0 rgba(0, 0, 0, 0.5);
+    border-radius: .5vh;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    width: 100%;
+    height: 65%;
+    margin: 0 2vh;
+    padding: 2vh;
+}
+
+.player-controls .top .btn p {
+    color: #080d09;
+    text-align: center;
+    font-size: 2vh;
+    font-weight: 500;
+    margin: 0;
+}
+
+.player-controls .bottom {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 60%;
+}
+
+.player-controls .bottom .btn {
+    background-color: #2d4c35;
+    box-shadow: 0 0 1.5vh 0 rgba(0, 0, 0, 0.5);
+    border-radius: .5vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 65%;
+    margin: 0 2vh;
+    transition: all .25s ease-in-out;
+}
+
+.player-controls .bottom .btn:hover {
+    box-shadow: 0 0 1.5vh 0 rgba(0, 0, 0, 0.65);
+    transform: translateY(-.25vh);
+}
+
+.player-controls .bottom .btn p {
+    color: #080d09;
+    text-align: center;
+    font-size: 2.5vh;
+    font-weight: 500;
+    margin: 0;
+}
+
+
+/* player-cards */
+.player-cards {
+    background-color: #2a2727;
+    box-shadow: 0 0 1.5vh 0 rgba(0, 0, 0, 0.5);
+    border-radius: 2vh 2vh 0 0;
+    display: flex;
+    width: 75%;
+    height: 15vh;
+}
+
+.player-cards .card-one, .player-cards .card-two {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50%;
+    height: 100%;
+}
+
+.player-cards img {
+    box-shadow: 0 0 1.5vh 0 rgba(0, 0, 0, 0.5);
+    border-radius: .5vh;
+    width: auto;
+    height: 80%;
+    transition: all .25s ease-in-out;
+}
+
+.player-cards img:hover {
+    box-shadow: 0 0 1.5vh 0 rgba(0, 0, 0, 0.65);
+    transform: translateY(-.25vh);
+}
+
+
+/* btn-disabled */
+.btn-disabled {
+    background-color: #1e2d22;
+    pointer-events: none;
+    opacity: 0.5;
+}
+
+.btn-disabled:hover {
+    box-shadow: 0 0 1.5vh 0 rgba(0, 0, 0, 0.5);
+    transform: translateY(0);
+}
+
+
+/* keyframes */
+@keyframes boxShadowIn {
+    0% {
+        box-shadow: inset 0 0 0 0 rgba(45, 76, 53, 0.65);
+    }
+    100% {
+        box-shadow: inset 0 0 10vh 0 rgba(45, 76, 53, 0.65);
+    }
+}
+
+@keyframes boxShadowOut {
+    0% {
+        box-shadow: inset 0 0 10vh 0 rgba(45, 76, 53, 0.65);
+    }
+    100% {
+        box-shadow: inset 0 0 0 0 rgba(45, 76, 53, 0.65);
+    }
+}
+
+
+
+@keyframes cardsAnimation {
+    0% {
+        transform: translateX(500%);
+    }
+    100% {
+        transform: translateX(0%);
+    }
+}
+
+
+/* Phone */
+@media only screen and (max-width: 768px) {
+    .player-cash .btn, .game-properties .btn {
+        margin: 0 1vh;
+    }
+
+    .player-controls .bottom .btn, .player-controls .top .left .btn {
+        margin: 0 1vh;
+    }
+
+    .player-cash p, .game-properties p, .player-controls .btn p, .player-controls .bottom .btn p {
+        font-size: 1vh;
+    }
+
+    .player-cards img {
+        width: 50%;
+        height: auto;
+
+    }
+}
+

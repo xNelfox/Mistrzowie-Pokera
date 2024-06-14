@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="img/icon.png" type="image/x-icon">
+    <link rel="stylesheet" href="style.css">
+    <title>Mistrzowie Pokera</title>
+</head>
+<body>
+    <!-- menu -->
+    <div class="wrapper menu">
+        <div class="top">
+            <p>Mistrzowie Pokera</p>
+        </div>
+        <div class="bottom">
+            <div class="btn" id="play">
+                <p>Graj</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- game -->
+    <div class="wrapper game">
+        <div class="top">
+            <div class="left"></div>
+            <div class="center">
+                <!-- player-cash -->
+                <div class="player-cash">
+                    <div class="btn">
+                        <p id="player2-name">Gracz:</p>
+                        <p id="player2-cash">0 PLN</p>
+                    </div>
+                    <div class="btn">
+                        <p id="player3-name">Gracz:</p>
+                        <p id="player3-cash">0 PLN</p>
+                    </div>
+                    <div class="btn">
+                        <p id="player4-name">Gracz:</p>
+                        <p id="player4-cash">0 PLN</p>
+                    </div>
+                </div>
+            </div>
+            <div class="right"></div>
+        </div>
+        <div class="middle">
+            <div class="left"></div>
+            <div class="center">
+                <div class="top">
+                    <!-- player-movement-message -->
+                    <div class="player-movement-message">
+                        <p id="movement-message"></p>
+                    </div>
+                </div>
+                <div class="bottom">
+                    <!-- drawn-cards -->
+                    <div class="drawn-cards"></div>
+                </div>
+            </div>
+            <div class="right"></div>
+        </div>
+        <div class="bottom">
+            <div class="left">
+                <!-- game-properties -->
+                <div class="game-properties">
+                    <div class="top">
+                        <div class="btn">
+                            <p id="current-bid">Stawka: 0 PLN</p>
+                        </div>
+                    </div>
+                    <div class="bottom">
+                        <div class="btn">
+                            <p id="pot-number">Pula: 0 PLN</p>
+                        </div>
+                    </div>
+                 </div>
+            </div>
+            <div class="center">
+                <!-- player-controls -->
+                <div class="player-controls">
+                    <div class="top">
+                        <div class="left">
+                            <div id="x2" class="btn btn-disabled">
+                                <p>x2</p>
+                            </div>
+                            <div id="x3" class="btn btn-disabled">
+                                <p>x3</p>
+                            </div>
+                            <div id="x4" class="btn btn-disabled">
+                                <p>x4</p>
+                            </div>
+                        </div>
+                        <div class="right">
+                            <div class="btn">
+                                <p id="player1-cash">Pieniądze: 0 PLN</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="bottom">
+                        <div id="fold" class="btn btn-disabled">
+                            <p>Pas</p>
+                        </div>
+                        <div id="check" class="btn btn-disabled">
+                            <p>Czekanie</p>
+                        </div>
+                        <div id="call" class="btn btn-disabled">
+                            <p>Wyrównanie</p>
+                        </div>
+                        <div id="rise" class="btn btn-disabled">
+                            <p>Podbicie</p>
+                        </div>
+                        <div id="all-in" class="btn btn-disabled">
+                            <p>All-in</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="right">
+                <!-- player-cards -->
+                 <div class="player-cards">
+                    <div class="card-one"></div>
+                    <div class="card-two"></div>
+                 </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="scripts/deck.js"></script>
+    <script src="scripts/main.js"></script>
+    <script src="scripts/result.js"></script>
+    <script src="scripts/audio.js"></script>
+</body>
+</html>
