@@ -424,8 +424,6 @@ body {
     }
 }
 
-
-
 @keyframes cardsAnimation {
     0% {
         transform: translateX(500%);
@@ -434,26 +432,3 @@ body {
         transform: translateX(0%);
     }
 }
-
-
-/* Phone */
-@media only screen and (max-width: 768px) {
-    .player-cash .btn, .game-properties .btn {
-        margin: 0 1vh;
-    }
-
-    .player-controls .bottom .btn, .player-controls .top .left .btn {
-        margin: 0 1vh;
-    }
-
-    .player-cash p, .game-properties p, .player-controls .btn p, .player-controls .bottom .btn p {
-        font-size: 1vh;
-    }
-
-    .player-cards img {
-        width: 50%;
-        height: auto;
-
-    }
-}
-
